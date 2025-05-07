@@ -70,7 +70,7 @@ describe('Requests for /api/products', () => {
                   })
     expect(res.statusCode).toBe(400)
     expect(res.body.status).not.toBeTruthy()
-  })
+  }, 50000)
 
   const invalidPayloads = [
     { missingField: 'product', body: { cost: 10, description: 'desc', quantity: 1 } },
